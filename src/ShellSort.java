@@ -2,6 +2,7 @@
  * 希尔排序
  * 不稳定
  * 时间复杂度：平均：O(n log n)；最好：(n log n)；最坏：(n log n)
+ * 空间复杂度：O(1)
  */
 public class ShellSort {
     public static void sort(int[] array) {

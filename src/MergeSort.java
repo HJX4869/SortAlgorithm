@@ -13,7 +13,7 @@ public class MergeSort {
     }
 
     private static void mergeSort(int[] array, int[] temp, int left, int right) {
-        if (left < right) {
+        if (left + 1 < right) {
             int mid = (left + right) / 2;
             mergeSort(array, temp, left, mid);
             mergeSort(array, temp, mid, right);
@@ -23,10 +23,10 @@ public class MergeSort {
 
     private static void mergeAdd(int[] array, int[] temp, int left, int mid, int right) {
         for (int index = left, i = left, j = mid; index < right; ++index) {
-            if (i >= mid || array[i] > array[j]) {
-                temp[index] = array[i++];
-            } else {
+            if (i >= mid || (j < right && array[i] > array[j])) {
                 temp[index] = array[j++];
+            } else {
+                temp[index] = array[i++];
             }
         }
         System.arraycopy(temp, left, array, left, right - left);
